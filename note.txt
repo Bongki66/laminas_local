@@ -1,0 +1,3 @@
+setup laminas:
+- create folder your_laminas_folder
+- run 'composer require laminas/laminas-xmlrpc' inside your_laminas_folder
