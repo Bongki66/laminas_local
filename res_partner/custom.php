@@ -30,6 +30,9 @@
 				'ids'=>array(13),
 			),
 		),
+		array(
+			'context'=>array('custom_context'=>true),
+		),
 	]);
 	echo '<pre/>';
 	print_r($res);
