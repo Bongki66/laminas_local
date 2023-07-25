@@ -1,6 +1,6 @@
 <?php
 
-	require_once 'vendor/autoload.php';
+	require_once '../vendor/autoload.php';
 	use Laminas\XmlRpc\Client;
 	use Laminas\XmlRpc\Client\Exception\HttpException;
 
@@ -13,20 +13,19 @@
 	$client->setSkipSystemLookup(true);
 	$uid = $client->call('authenticate', array($db, $username, $password, []));
 	echo '<pre/>';
-	echo $uid;
+	echo 'uid: '.(string)$uid;
+	echo '<pre/>';
+	echo 'create res partner';
 
 	$models = new Client("$url/xmlrpc/2/object");
 	$models->setSkipSystemLookup(true);
-	$res_models = $models->call('execute_kw', [
-		$db,
-		$uid,
-		$password,
-		'res.partner',
-		'check_access_rights',
-		array('read'),
-		array('raise_exception' => false)
+	$ids = $models->call('execute_kw', [
+		$db, 
+		$uid, 
+		$password, 
+		'res.partner', 
+		'create', 
+		array(array('name'=>"Laminas 1"))
 	]);
 	echo '<pre/>';
-	echo $res_models;
-
-	
+	print_r($ids);
