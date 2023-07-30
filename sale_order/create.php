@@ -27,7 +27,8 @@
 		'create', 
 		array(
 			array(
-				'partner_code'=>'lmns-000001', 
+				'x_code'=>'SO-MAG/000001',
+				'partner_code'=>'MAGC-0000001', 
 				'order_line'=>array(
 					array('product_code'=>'F-000001', 'product_uom_qty'=>10),
 					array('product_code'=>'D-000001', 'product_uom_qty'=>15),
